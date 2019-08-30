@@ -16,6 +16,8 @@ testChanged(with_('_.each(a, b, c)'), with_('_.each(a, _.bind(b, c))'));
 testChanged(with_('_.eachRight(a, b, c)'), with_('_.eachRight(a, _.bind(b, c))'));
 testChanged(with_('_.every(a, b, c)'), with_('_.every(a, _.bind(b, c))'));
 testChanged(with_('_.filter(a, b, c)'), with_('_.filter(a, _.bind(b, c))'));
+testChanged(with_('_.filter(a, \'b\', c)'), with_('_.filter(a, {\n  b: c\n})'));
+testChanged(with_('_.filter(a, "hello-world", c)'), with_('_.filter(a, {\n  "hello-world": c\n})'));
 testChanged(with_('_.find(a, b, c)'), with_('_.find(a, _.bind(b, c))'));
 testChanged(with_('_.findIndex(a, b, c)'), with_('_.findIndex(a, _.bind(b, c))'));
 testChanged(with_('_.findKey(a, b, c)'), with_('_.findKey(a, _.bind(b, c))'));
